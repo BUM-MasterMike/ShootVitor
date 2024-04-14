@@ -1,25 +1,36 @@
+@echo off 
 
-cd ..
+REM
+REM  Package ShootVitor on Windows
+REM
 
-G:\Java\JDKs\Azul\zulu17.44.53-ca-fx-jdk17.0.8.1-win_x64\bin\jpackage.exe  ^
- --verbose  ^
- --type msi  ^
- --dest output  ^
+
+
+set VERSION=2.0
+set JPACKAGE=G:\Java\JDKs\Azul\zulu17.44.53-ca-fx-jdk17.0.8.1-win_x64\bin\jpackage.exe
+set JMODS=G:\Java\JDKs\Azul\zulu17.44.53-ca-fx-jdk17.0.8.1-win_x64\jmods
+set TYPE=msi
+
+
+
+%JPACKAGE%  ^
+ --type "%TYPE%"  ^
+ --dest "../output"  ^
  --name "ShootVitor"  ^
- --app-version "2.0"  ^
+ --app-version "%VERION%"  ^
  --description "Shoot the Vitor - He's a Bich! 2D shooter game by MasterMike."  ^
  --vendor "autumo GmbH"  ^
  --copyright "2024 autumo GmbH"  ^
- --resource-dir package  ^
- --icon "C:\Users\mike\Desktop\ShootVitor\package\ShootVitor.ico"  ^
- --module-path "G:\Java\JDKs\Azul\zulu17.44.53-ca-fx-jdk17.0.8.1-win_x64\jmods";"C:\Users\mike\Desktop\ShootVitor\target\classes"  ^
+ --resource-dir "../package"  ^
+ --icon "../package/ShootVitor.ico"  ^
+ --module-path "%JMODS%"  ^
  --add-modules javafx.controls,javafx.media  ^
- --input "target"  ^
- --main-jar "ShootVitor-2.0.jar"  ^
+ --main-jar "../target/ShootVitor-%VERION%.jar"  ^
  --main-class "ch.autumo.games.shootvitor.App"  ^
- --input "C:\Users\mike\Desktop\ShootVitor\target"  ^
+ --input "../target"  ^
  --java-options -Xmx2048m  ^
  --win-menu-group "autumo GmbH"  ^
  --win-dir-chooser  ^
  --win-menu  ^
  --win-shortcut
+

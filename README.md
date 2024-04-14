@@ -4,6 +4,8 @@
 2D shooter game.</br>
 Version 2.0
 
+<p style="text-align: center;"><strong><a href="https://youtu.be/ZyrpuNFjb7Q">Demo</a></strong></p>
+
 This JavaFX game has been initially developed with ChatGPT and
 then completed by MasterMike.
 

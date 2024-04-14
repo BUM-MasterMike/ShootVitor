@@ -67,8 +67,8 @@ import javafx.util.Duration;
  * 2D shooter game.
  * Version 2.0
  * 
- * @author ChatGPT
  * @author MasterMike
+ * @author ChatGPT
  * 
  * This JavaFX game has been initially developed with ChatGPT and
  * then completed by MasterMike.
@@ -85,11 +85,11 @@ public class App extends Application {
     
     private static final int BAR_HEIGHT = 28;
     
-    private static final int WIDTH = 800;
-    private static final int HEIGHT = 600;
+    private static final int DEFAULT_WIDTH = 800;
+    private static final int DEFAULT_HEIGHT = 600;
     
-    private static double width = WIDTH;
-    private static double height = HEIGHT;
+    private static double width = DEFAULT_WIDTH;
+    private static double height = DEFAULT_HEIGHT;
     
     private static final String FONT_FAMILY = "Verdana";
         
@@ -185,11 +185,19 @@ public class App extends Application {
 
         this.primaryStage = primaryStage;
         
-        // Screen size
+        
+        // NOTE: The initial scene size might not be the fullscreen size,
+        // so the scaling calculations not work for the fullscreen, e.g. the
+        // macOS stage manager resizes the the initial scene, therefore
+        // when going to real full screen the scene should take the dimensions
+        // of the full screen, but it doesn't, that's possible a Java FX issue
+        // and a workaround should be found. The AWT Tookit does the same!
+        
+        
         final Rectangle2D screenBounds = Screen.getPrimary().getBounds();
         width = screenBounds.getWidth();
         height = screenBounds.getHeight();
-
+        
         if (loadMusic) {
             // Initialize music
             initBackgroundMusic(
@@ -226,10 +234,10 @@ public class App extends Application {
         
         if (fullscreen) {
 
-            final double ratio = WIDTH / HEIGHT;
+            final double ratio = DEFAULT_WIDTH / DEFAULT_HEIGHT;
             upScale = width / height > ratio
-                            ? height / HEIGHT
-                            : width / WIDTH;
+                            ? height / DEFAULT_HEIGHT
+                            : width / DEFAULT_WIDTH;
             
             vitorX = width / 2.0;
             vitorY = height / 2.0;
@@ -470,21 +478,25 @@ public class App extends Application {
             if (trippleKill) {
                 if (trippleKillPlayers != null) {
                     Platform.runLater(()-> {
-                        boolean played = false;
-                        for (MediaPlayer player : trippleKillPlayers) {
-                            if (player.getStatus() == MediaPlayer.Status.STOPPED) {
-                                player.seek(Duration.ZERO);
-                                player.play();
-                                played = true;
-                                break;
+                        // Delay the tripple kill output
+                        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.5), event -> {
+                            boolean played = false;
+                            for (MediaPlayer player : trippleKillPlayers) {
+                                if (player.getStatus() == MediaPlayer.Status.STOPPED) {
+                                    player.seek(Duration.ZERO);
+                                    player.play();
+                                    played = true;
+                                    break;
+                                }
                             }
-                        }
-                        if (!played) {
-                            Media media = new Media(App.this.getClass().getResource("/tripplekill.wav").toExternalForm());
-                            MediaPlayer newPlayer = new MediaPlayer(media);
-                            newPlayer.play();
-                            trippleKillPlayers.add(newPlayer);
-                        }
+                            if (!played) {
+                                Media media = new Media(App.this.getClass().getResource("/tripplekill.wav").toExternalForm());
+                                MediaPlayer newPlayer = new MediaPlayer(media);
+                                newPlayer.play();
+                                trippleKillPlayers.add(newPlayer);
+                            }
+                        }));
+                        timeline.play();
                     });
                 } else {
                     System.err.println("TRIPPLE-KILL !!");
@@ -510,8 +522,8 @@ public class App extends Application {
     private void endFullScreen() {
 
         upScale = 1.0;
-        width = WIDTH;
-        height = HEIGHT;
+        width = DEFAULT_WIDTH;
+        height = DEFAULT_HEIGHT;
         vitorX = width / 2;
         vitorY = height / 2;
 
@@ -681,7 +693,7 @@ public class App extends Application {
 
         showSpecialMessages(gc);
         
-        // Draw Vitor
+        // Draw and move Vitor
         moveVitor(); // Move Vitor only if not hit
 
         // Inside your renderGame method, replace the code for drawing Vitor with:
@@ -914,7 +926,8 @@ public class App extends Application {
         for (int i = 0; i < MAX_AUDIO_KILLS; i++) {
             Media media = new Media(getClass().getResource("/doublekill.wav").toExternalForm());
             MediaPlayer mediaPlayer = new MediaPlayer(media);
-            mediaPlayer.setVolume(0.0);
+            // TODO: no effect, why?
+            mediaPlayer.setVolume(0.6);
             doubleKillPlayers.add(mediaPlayer);
         }
 
@@ -922,7 +935,8 @@ public class App extends Application {
         for (int i = 0; i < MAX_AUDIO_KILLS; i++) {
             Media media = new Media(getClass().getResource("/tripplekill.wav").toExternalForm());
             MediaPlayer mediaPlayer = new MediaPlayer(media);
-            mediaPlayer.setVolume(0.0);
+            // TODO: no effect, why?
+            mediaPlayer.setVolume(0.6);
             trippleKillPlayers.add(mediaPlayer);
         }
 
@@ -1016,7 +1030,7 @@ public class App extends Application {
     /**
      * Scene size change listener.
      */
-    private static class SceneSizeChangeListener implements ChangeListener<Number> {
+    private class SceneSizeChangeListener implements ChangeListener<Number> {
 
         private final Scene scene;
         private final double ratio;
