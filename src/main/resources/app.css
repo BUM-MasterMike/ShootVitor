@@ -1,0 +1,63 @@
+
+.root {
+    -fx-font-family: 'Verdana';
+    -fx-base: #111111;
+    -fx-accent: #111111 ;
+    -fx-default-button: #222222 ;
+    -fx-focus-color: #444444;
+    -fx-faint-focus-color: #44444422;
+    -fx-focused-text-base-color : ladder(
+            -fx-selection-bar,
+            -fx-light-text-color 45%,
+            -fx-dark-text-color 46%,
+            -fx-dark-text-color 59%,
+            -fx-mid-text-color 60%
+        );
+    -fx-focused-mark-color : -fx-focused-text-base-color ;   
+    -fx-background: #1f1f1f;
+}
+
+.label {
+    -fx-padding: 2 0 2 0;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;    
+}
+
+.hyperlink {
+    -fx-padding: 2 0 2 0;
+    -fx-font-size: 16px;
+    -fx-text-fill: #88ccff;
+}
+
+.button {
+    -fx-cursor: hand;	
+    -fx-background-color: #222222;
+    -fx-text-fill: white;
+    -fx-padding: 10 12 10 12;
+    -fx-font-size: 16px;
+    /* -fx-border-radius: 10; */
+    -fx-border-color: black;
+    -fx-border-width: 1 1 1 1;
+}
+
+.dialog-pane {
+    -fx-background-color: #333333;
+}
+
+.dialog-pane .content.label {
+    -fx-padding: 32 20 20 20;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-background-color: #333333;
+}
+
+.dialog-pane:header .header-panel {
+    -fx-padding: 12 26 12 26;
+    -fx-background-color: #222222;
+}
+
+.dialog-pane:header .header-panel .label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffeeaa;
+}
