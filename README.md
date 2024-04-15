@@ -8,9 +8,9 @@
   <p align="center">
     2D shooter game - Version 2.0
     <br>
-    <a href="https://github.com/BUM-MasterMike/ShootVitor">Report Bug</a>
+    <a href="https://github.com/BUM-MasterMike/ShootVitor/issues">Report Bug</a>
     ·
-    <a href="https://github.com/BUM-MasterMike/ShootVitor">Request Feature</a>
+    <a href="https://github.com/BUM-MasterMike/ShootVitor/issues">Request Feature</a>
   </p>
 </div>
 
