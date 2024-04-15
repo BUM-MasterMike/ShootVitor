@@ -2,7 +2,7 @@
 <!-- PROJECT LOGO -->
 <div align="center">
   <a href="https://github.com/BUM-MasterMike/ShootVitor">
-    <img src="https://raw.githubusercontent.com/ShootVitor/blob/main/src/main/resources/Vitor.png" alt="Logo" width="200" height="200">
+    <img src="https://raw.githubusercontent.com/BUM-MasterMike/ShootVitor/main/src/main/resources/Vitor.png" alt="Logo" width="200" height="200">
   </a>
   <h1 align="center">Shoot the Vitor - He's a Bich!</h1>
   <p align="center">
@@ -14,6 +14,8 @@
   </p>
 </div>
 
+<br/>
+<br/>
 
 [![autumo beetRoot 2.x - Quickstart](https://i3.ytimg.com/vi/ZyrpuNFjb7Q/maxresdefault.jpg)](https://youtu.be/ZyrpuNFjb7Q)
 <sup>*Click above image to watch the demo video.*</sup>
