@@ -24,7 +24,7 @@ $JPACKAGE  \
  --icon "../package/ShootVitor.png"  \
  --module-path "$JMODS"  \
  --add-modules javafx.controls,javafx.media  \
- --main-jar "target/ShootVitor-$VERSION.jar"  \
+ --main-jar "../target/ShootVitor-$VERSION.jar"  \
  --main-class "ch.autumo.games.shootvitor.App"  \
  --input "../target"  \
  --java-options -Xmx2048m \
