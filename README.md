@@ -5,7 +5,7 @@
 Version 2.0
 
 [![autumo beetRoot 2.x - Quickstart](https://i3.ytimg.com/vi/ZyrpuNFjb7Q/maxresdefault.jpg)](https://youtu.be/ZyrpuNFjb7Q)
-Click above image to watch the demo video.
+<sup>*Click above image to watch the demo video.*</sup>
 
 This JavaFX game has been initially developed with ChatGPT and
 then completed by MasterMike.
