@@ -655,7 +655,7 @@ public class App extends Application {
         
         if (bichLevelReached) {
             gc.setFill(Color.BEIGE);
-            gc.setFont(Font.font(FONT_FAMILY, FontWeight.BOLD, 48 * upScale));
+            gc.setFont(Font.font(FONT_FAMILY, FontWeight.BOLD, 42 * upScale));
             gc.setTextAlign(TextAlignment.CENTER);
             gc.setTextBaseline(VPos.CENTER);
             gc.fillText("100 points! You are a Bich too!", width / 2, height / 2);
@@ -666,7 +666,7 @@ public class App extends Application {
         }
         if (bastardLevelReached) {
             gc.setFill(Color.CORAL);
-            gc.setFont(Font.font(FONT_FAMILY, FontWeight.BOLD, 48 * upScale));
+            gc.setFont(Font.font(FONT_FAMILY, FontWeight.BOLD, 42 * upScale));
             gc.setTextAlign(TextAlignment.CENTER);
             gc.setTextBaseline(VPos.CENTER);
             gc.fillText("150 points! You are a BASTARD!", width / 2, height / 2);
