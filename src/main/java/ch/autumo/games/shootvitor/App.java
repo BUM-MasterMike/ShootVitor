@@ -910,7 +910,7 @@ public class App extends Application {
         
         alert.getDialogPane().contentProperty().set(borderpane);
         
-        // We misuse the cancel button for the fullscreen choice.
+        // We misuse the cancel button for the rq/qq choice.
         ((Button) alert.getDialogPane().lookupButton(ButtonType.CANCEL)).setText("rq");
         ((Button) alert.getDialogPane().lookupButton(ButtonType.OK)).setText("qq");
         
@@ -1030,7 +1030,7 @@ public class App extends Application {
     /**
      * Scene size change listener.
      */
-    private class SceneSizeChangeListener implements ChangeListener<Number> {
+    private static class SceneSizeChangeListener implements ChangeListener<Number> {
 
         private final Scene scene;
         private final double ratio;

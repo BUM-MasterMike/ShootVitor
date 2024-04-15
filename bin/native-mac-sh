@@ -1,0 +1,48 @@
+#!/bin/sh
+
+#
+# Native ShootVitor on macOS
+#
+
+
+
+VERSION=2.0
+CLASSPATH="../target/ShootVitor-$VERSION.jar:../target/classes"
+JMODS="/Users/Mike/Library/Java/javafx-jmods-21.0.2"
+FX_LIBS="/Users/Mike/Library/Java/javafx-sdk-21.0.2/lib"
+NATIVE_IMAGE_CMD="native-image"
+
+
+
+#
+# Dynamically build the classpath
+#
+COUNT=0
+LIB_CLASSPATH=
+for i in `ls ${FX_LIBS}/*.jar`
+do
+    if [ $COUNT -eq 0 ]; then
+            LIB_CLASSPATH=${i}
+    else
+            LIB_CLASSPATH=${LIB_CLASSPATH}:${i}
+    fi
+    COUNT=$((c+1))
+done
+CLASSPATH=${CLASSPATH}:${LIB_CLASSPATH}
+#echo $CLASSPATH
+
+
+
+$NATIVE_IMAGE_CMD  \
+  -H:+ReportExceptionStackTraces  \
+  -H:ReflectionConfigurationFiles=reflect.json  \
+  --no-fallback  \
+  --class-path "$CLASSPATH"  \
+  --module-path "$JMODS"  \
+  -jar "../target/ShootVitor-$VERSION.jar"
+
+
+
+  #-H:JNIConfigurationFiles=jni.json
+  #-Djavafx.verbose=true
+  #-Dprism.verbose=true

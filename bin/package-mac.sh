@@ -1,3 +1,5 @@
+#!/bin/sh
+
 #
 # Package ShootVitor on macOS
 #
@@ -31,4 +33,3 @@ $JPACKAGE  \
  --mac-package-identifier "ch.autumo.games.shootvitor"  \
  --mac-package-name "ShootVitor $VERSION"  \
  --mac-app-category "public.app-category.games"
-

@@ -1,3 +1,5 @@
+#!/bin/sh
+
 #
 # Package ShootVitor on Linux
 #
@@ -32,4 +34,3 @@ $JPACKAGE  \
  --linux-menu-group "Game"  \
  --linux-app-category "Game"  \
  --linux-deb-maintainer "info@autumo.ch"
-

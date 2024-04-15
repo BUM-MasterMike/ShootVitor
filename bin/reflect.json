@@ -1,0 +1,32 @@
+[
+    {
+        "name" : "ch.autumo.games.shootvitor.App",
+        "allDeclaredConstructors" : true,
+        "allPublicConstructors" : true,
+        "allDeclaredMethods" : true,
+        "allPublicMethods" : true,
+        "allDeclaredClasses" : true,
+        "allPublicClasses" : true,
+        "allPublicFields" : true
+    },
+    {
+        "name" : "javafx.scene.image.Image",
+        "allDeclaredConstructors" : true,
+        "allPublicConstructors" : true,
+        "allDeclaredMethods" : true,
+        "allPublicMethods" : true,
+        "allDeclaredClasses" : true,
+        "allPublicClasses" : true,
+        "allPublicFields" : true
+    },
+    {
+        "name" : "com.sun.javafx.tk.quantum.QuantumToolkit",
+        "allDeclaredConstructors" : true,
+        "allPublicConstructors" : true,
+        "allDeclaredMethods" : true,
+        "allPublicMethods" : true,
+        "allDeclaredClasses" : true,
+        "allPublicClasses" : true,
+        "allPublicFields" : true
+    }
+]
