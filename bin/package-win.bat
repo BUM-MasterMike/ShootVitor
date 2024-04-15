@@ -17,7 +17,7 @@ set TYPE=msi
  --type "%TYPE%"  ^
  --dest "../output"  ^
  --name "ShootVitor"  ^
- --app-version "%VERION%"  ^
+ --app-version "%VERSION%"  ^
  --description "Shoot the Vitor - He's a Bich! 2D shooter game by MasterMike."  ^
  --vendor "autumo GmbH"  ^
  --copyright "2024 autumo GmbH"  ^
@@ -25,7 +25,7 @@ set TYPE=msi
  --icon "../package/ShootVitor.ico"  ^
  --module-path "%JMODS%"  ^
  --add-modules javafx.controls,javafx.media  ^
- --main-jar "../target/ShootVitor-%VERION%.jar"  ^
+ --main-jar "../target/ShootVitor-%VERSION%.jar"  ^
  --main-class "ch.autumo.games.shootvitor.App"  ^
  --input "../target"  ^
  --java-options -Xmx2048m  ^
