@@ -1,8 +1,19 @@
-# ShootVitor
 
-**Shoot the Vitor - He's a Bich!**</br>
-2D shooter game.</br>
-Version 2.0
+<!-- PROJECT LOGO -->
+<div align="center">
+  <a href="https://github.com/BUM-MasterMike/ShootVitor">
+    <img src="https://raw.githubusercontent.com/ShootVitor/blob/main/src/main/resources/Vitor.png" alt="Logo" width="200" height="200">
+  </a>
+  <h1 align="center">Shoot the Vitor - He's a Bich!</h1>
+  <p align="center">
+    2D shooter game - Version 2.0
+    <br>
+    <a href="https://github.com/BUM-MasterMike/ShootVitor">Report Bug</a>
+    ·
+    <a href="https://github.com/BUM-MasterMike/ShootVitor">Request Feature</a>
+  </p>
+</div>
+
 
 [![autumo beetRoot 2.x - Quickstart](https://i3.ytimg.com/vi/ZyrpuNFjb7Q/maxresdefault.jpg)](https://youtu.be/ZyrpuNFjb7Q)
 <sup>*Click above image to watch the demo video.*</sup>
