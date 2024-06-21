@@ -22,13 +22,13 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>21.0.2</version>
+            <version>17.0.11</version> <!-- 21.0.2 -->
         </dependency>
         
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-media</artifactId>
-            <version>21.0.2</version>
+            <version>17.0.11</version> <!-- 21.0.2 -->
         </dependency>
         
     </dependencies>
@@ -124,7 +124,9 @@
                             <arguments>
                                 <argument>-classpath</argument>
                                 <classpath/>
-                                <argument>${mainClass}</argument>
+                                <mainClass>${mainClass}</mainClass>
+                                <argument>-Dprism.verbose=true</argument>
+                                <argument>-Djavafx.verbose=true</argument>
                             </arguments>
                         </configuration>
                     </execution>
