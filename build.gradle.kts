@@ -4,7 +4,7 @@
 
 plugins {
     `application`
-    `org.openjfx.javafxplugin`
+    // `org.openjfx.javafxplugin`
     `java-library`
     `maven-publish`
 }
