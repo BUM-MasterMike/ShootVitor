@@ -9,6 +9,8 @@ plugins {
     id 'java-library'
 }
 
+apply plugin: 'java'
+
 repositories {
     mavenLocal()
     maven {
