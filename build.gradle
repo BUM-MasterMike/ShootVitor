@@ -3,9 +3,10 @@
  */
 
 plugins {
+    id 'java'
     id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
     id 'java-library'
-    id 'maven-publish'
 }
 
 repositories {
@@ -25,22 +26,15 @@ version = '2.0'
 description = 'ShootVitor'
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
+javafx {
+    version = "17"
+    modules = [ 'javafx.controls', 'javafx.media', 'javafx.fxml' ]
+}
+
 application {                                                           
     mainClass = 'ch.autumo.games.shootvitor.App'
 }
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            from(components.java)
-        }
-    }
-}
-
 tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
-
-tasks.withType(Javadoc) {
     options.encoding = 'UTF-8'
 }
