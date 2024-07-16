@@ -17,8 +17,8 @@ repositories {
 }
 
 dependencies {
-    implementation "org.openjfx:javafx-controls:17"
-    implementation "org.openjfx:javafx-fxml:17"
+    implementation = "org.openjfx:javafx-controls:17"
+    implementation = "org.openjfx:javafx-fxml:17"
 }
 
 group = "ch.autumo.games"
