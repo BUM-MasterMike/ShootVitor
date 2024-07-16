@@ -27,7 +27,6 @@ jobs:
         java-version: '17'
         java-package: 'jre+fx'
         distribution: 'zulu'
-        architecture: ''
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
