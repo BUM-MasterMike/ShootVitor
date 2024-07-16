@@ -1,5 +1,8 @@
 package ch.autumo.games.shootvitor;
 
+/**
+ * System info. 
+ */
 public class SystemInfo {
 
     public static String javaVersion() {
