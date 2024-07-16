@@ -3,6 +3,8 @@
  */
 
 plugins {
+    `application`
+    `org.openjfx.javafxplugin`
     `java-library`
     `maven-publish`
 }
