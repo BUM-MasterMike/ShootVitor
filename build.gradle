@@ -19,9 +19,6 @@ repositories {
 }
 
 dependencies {
-    api "org.openjfx:javafx-controls:17"
-    api "org.openjfx:javafx-media:17"
-    api "org.openjfx:javafx-fxml:17"
 }
 
 group = 'ch.autumo.games'
